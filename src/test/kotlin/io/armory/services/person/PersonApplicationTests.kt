@@ -11,6 +11,7 @@ class PersonApplicationTests {
 
 	@Test
 	fun contextLoads() {
+		println("Hello world!")
 	}
 
 }
