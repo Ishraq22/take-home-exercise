@@ -34,7 +34,7 @@ pipeline {
                 script {
                     dockerImage = docker.build (registry + ":${BUILD_NUMBER}", "--build-arg JARFILE=person-0.0.1-SNAPSHOT.jar .")
                     withAWS(region:'us-east-2',credentials:'Ishraq22') {
-                        s3Upload(file:'/target/person-0.0.1-SNAPSHOT.jar', bucket:'armour-s3')
+                        s3Upload(file:'/var/lib/jenkins/workspace/Build/target/person-0.0.1-SNAPSHOT.jar', bucket:'armour-s3')
                     }
                 }
             }
